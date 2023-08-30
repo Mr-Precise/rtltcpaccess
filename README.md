@@ -1,5 +1,7 @@
 rtltcpaccess
 ============
+This fork has no special differences from the original, only added support for building using CMake.  
+And some small changes.
 
 rtltcpaccess is a drop-in replacement for RTL283XACCESS.dll that connects
 to an rtl_tcp server and streams the samples from there.
@@ -13,15 +15,15 @@ Installation
 The installation script (dab_install.sh) fetches the DAB software as well as a
 pre-built version of the library which is also available from here:
 
-https://raw.github.com/steve-m/rtltcpaccess/master/rtltcpaccess.tar.gz
+https://github.com/Mr-Precise/rtltcpaccess/releases/latest
 
 To get the installation script, run:
 
-    wget https://raw.github.com/steve-m/rtltcpaccess/master/dab_install.sh
+    wget https://raw.github.com/Mr-Precise/rtltcpaccess/master/res/dab_install.sh
     chmod +x dab_install.sh
     ./dab_install.sh
 
-If you want to build the library yourself, get MinGW and run 'make'.
+If you want to build the library yourself, get MinGW and run 'make' or use CMake
 
 Usage
 ---
@@ -45,6 +47,12 @@ Those are the names of the registry keys:
     "address"="192.168.1.1"
     "port"=dword:00009999
     "testmode"=dword:00000000
+
+Calculate new port:  
+run in console
+```bash
+echo -n "Enter new port: "; read port; printf "New DWORD value: %08x\n" $port
+```
 
 address is a string, port is a DWORD. If the testmode is enabled it checks for 
 lost samples, just like rtl_test.
