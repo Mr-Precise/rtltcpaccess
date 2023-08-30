@@ -1,0 +1,5 @@
+REGEDIT4
+[HKEY_CURRENT_USER\Software\rtltcpaccess]
+"address"="192.168.1.1"
+"port"=dword:000004d2
+"testmode"=dword:00000000
